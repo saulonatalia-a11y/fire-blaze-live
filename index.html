@@ -24,6 +24,28 @@
  </div>
 </section>
 
+<section class="card live-chat-launch">
+ <div class="title"><div><span class="eyebrow">CENTRAL DA LIVE</span><h2>Chat da Live</h2></div><span class="pill">NOVO</span></div>
+ <p class="muted">Abra uma tela dedicada com os números da transmissão no topo e todas as mensagens do chat abaixo.</p>
+ <button id="openLiveChat" class="primary big-btn">💬 ABRIR CHAT DA LIVE</button>
+</section>
+
+<section id="liveChatPanel" class="live-chat-panel hidden">
+ <div class="live-chat-head">
+  <div><span class="eyebrow">FIRE BLAZE • AO VIVO</span><h2>Chat da Live</h2></div>
+  <button id="closeLiveChat" class="icon-btn">✕</button>
+ </div>
+ <div class="live-chat-stats">
+  <article><span>♟ INSCRITOS</span><strong id="chatSubs">12.840</strong></article>
+  <article><span>♥ LIKES</span><strong id="chatLikes">50</strong></article>
+  <article><span>👁 ESPECTADORES</span><strong id="chatViewers">248</strong></article>
+ </div>
+ <div class="live-chat-stream" id="liveChatStream">
+  <div class="live-chat-empty"><b>💬 CHAT DA TRANSMISSÃO</b><span>Quando conectarmos o YouTube, as mensagens aparecerão aqui em tempo real.</span></div>
+ </div>
+ <div class="live-chat-footer"><span><i></i> Chat conectado</span><b id="chatMessageCount">0 mensagens</b></div>
+</section>
+
 <section class="card">
  <div class="title"><div><span class="eyebrow">SORTEIO PELO CHAT</span><h2>Participantes</h2></div><span class="pill" id="count">0 participantes</span></div>
  <label>Palavra para participar<input id="keyword" value="sorteio"></label>
