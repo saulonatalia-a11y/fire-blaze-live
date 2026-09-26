@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fire Blaze - Overlay Sorteio</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:Segoe UI,Arial,sans-serif;color:#fff}
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at center,rgba(111,44,255,.30),transparent 48%)}
+.box{position:relative;min-width:min(820px,90vw);padding:55px 70px;border:2px solid rgba(187,126,255,.65);border-radius:30px;background:linear-gradient(145deg,rgba(25,10,45,.93),rgba(9,4,18,.92));box-shadow:0 0 50px rgba(137,56,255,.55),inset 0 0 45px rgba(147,72,255,.12);overflow:hidden}
+.kicker{font-size:20px;font-weight:900;letter-spacing:5px;color:#d6b8ff}.sub{color:#ae96c7;margin-top:12px;font-size:18px}.num{font-size:190px;line-height:1;margin:25px 0 5px;font-weight:900;text-shadow:0 0 20px #fff,0 0 55px #a343ff,0 0 100px #7025ff;animation:pulse 1s ease-in-out infinite}.sec{letter-spacing:6px;color:#aa94bd}.winner{display:none}.winner.show{display:block;animation:pop .8s cubic-bezier(.2,1.6,.4,1)}.winner h1{font-size:74px;margin:25px 0;text-shadow:0 0 15px #fff,0 0 40px #c15cff,0 0 100px #7025ff}.winner .congrats{font-size:26px;font-weight:900;color:#d7baff}.confetti i{position:fixed;top:-30px;width:12px;height:24px;border-radius:3px;animation:fall 3.5s linear forwards}.confetti i:nth-child(4n+1){background:#b85cff}.confetti i:nth-child(4n+2){background:#fff}.confetti i:nth-child(4n+3){background:#ffd65a}.confetti i:nth-child(4n){background:#6f35ff}@keyframes pulse{50%{transform:scale(1.12)}}@keyframes pop{0%{transform:scale(.15);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}@keyframes fall{to{transform:translateY(110vh) rotate(900deg);opacity:.7}}
+</style></head><body>
+<div class="stage"><div class="box">
+ <div id="count"><div class="kicker">🎁 SORTEIO EM ANDAMENTO</div><div class="sub">PREPARANDO O RESULTADO...</div><div class="num" id="n">10</div><div class="sec">SEGUNDOS</div></div>
+ <div class="winner" id="winner"><div class="kicker">🏆 GANHADOR DO SORTEIO</div><h1>Lucas Gamer</h1><div class="congrats">PARABÉNS! 🎉</div></div>
+</div></div><div class="confetti" id="fx"></div>
+<script>
+let n=10;const num=document.getElementById('n');
+const timer=setInterval(()=>{n--;num.textContent=Math.max(0,n);if(n<=0){clearInterval(timer);document.getElementById('count').style.display='none';document.getElementById('winner').classList.add('show');const fx=document.getElementById('fx');for(let i=0;i<100;i++){const p=document.createElement('i');p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*1.2+'s';p.style.animationDuration=(2.2+Math.random()*2)+'s';fx.appendChild(p)}}},1000);
+</script></body></html>
