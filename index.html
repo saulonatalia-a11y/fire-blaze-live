@@ -43,6 +43,16 @@
  <div class="live-chat-stream" id="liveChatStream">
   <div class="live-chat-empty"><b>💬 CHAT DA TRANSMISSÃO</b><span>Quando conectarmos o YouTube, as mensagens aparecerão aqui em tempo real.</span></div>
  </div>
+ <div class="live-chat-controls">
+   <div class="live-participants"><span>🎟 PARTICIPANTES DO SORTEIO</span><strong id="liveParticipantCount">0</strong></div>
+   <button id="liveDraw" class="primary live-draw-btn">🎁 SORTEAR AGORA</button>
+ </div>
+ <div id="liveWinner" class="live-winner hidden">
+   <small>🏆 GANHADOR DO SORTEIO</small>
+   <strong></strong>
+   <span>PARABÉNS! 🎉</span>
+   <button id="closeWinner">FECHAR</button>
+ </div>
  <div class="live-chat-footer"><span><i></i> Chat conectado</span><b id="chatMessageCount">0 mensagens</b></div>
 </section>
 
