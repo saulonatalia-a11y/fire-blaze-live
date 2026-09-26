@@ -1,0 +1,19 @@
+{
+  "name": "fire-blaze-live",
+  "version": "0.1.0",
+  "description": "Painel Windows para YouTube Live, metas, overlays e sorteios",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.fireblaze.live",
+    "productName": "Fire Blaze Live",
+    "win": { "target": "nsis" }
+  }
+}
