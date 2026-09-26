@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fire Blaze Live</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header><div><span class="eyebrow">FIRE BLAZE</span><h1>LIVE CONTROL</h1></div><span class="status"><i></i> DEMO AO VIVO</span></header>
+<section class="stats">
+ <article><span>👁 ESPECTADORES</span><strong id="viewers">248</strong><small>agora na live</small></article>
+ <article><span>♥ LIKES</span><strong id="likes">50</strong><small>em tempo real</small></article>
+ <article><span>♟ INSCRITOS</span><strong id="subs">12.840</strong><small>no canal</small></article>
+</section>
+
+<section class="card">
+ <div class="title"><div><span class="eyebrow">META DA LIVE</span><h2>Overlay de meta</h2></div><label class="switch"><input id="goalOn" type="checkbox" checked><span></span></label></div>
+ <label>Texto da meta<input id="goalText" value="META DE LIKES PARA O SORTEIO"></label>
+ <div class="row"><label>Tipo<select id="goalType"><option value="likes">Likes</option><option value="subs">Inscritos</option></select></label><label>Meta<input id="goalTarget" type="number" value="100" min="1"></label></div>
+ <div class="preview">
+   <div class="preview-title" id="previewText">META DE LIKES PARA O SORTEIO</div>
+   <div class="bar"><b id="barFill"></b></div>
+   <div class="goalnums"><strong id="currentGoal">50</strong><span>/</span><strong id="targetGoal">100</strong></div>
+ </div>
+</section>
+
+<section class="card">
+ <div class="title"><div><span class="eyebrow">SORTEIO PELO CHAT</span><h2>Participantes</h2></div><span class="pill" id="count">0 participantes</span></div>
+ <label>Palavra para participar<input id="keyword" value="sorteio"></label>
+ <div class="chatbox" id="chat"><div class="empty">As mensagens do chat aparecerão aqui quando conectarmos o YouTube.</div></div>
+ <div class="row actions"><button id="demo">+ SIMULAR PARTICIPANTE</button><button id="draw" class="primary">🎁 SORTEAR</button></div>
+ <div id="winner" class="winner hidden"><small>🎉 VENCEDOR</small><strong></strong><span>Parabéns!</span></div>
+</section>
+
+<section class="card">
+ <div class="title"><div><span class="eyebrow">OVERLAYS</span><h2>Prévia para OBS</h2></div></div>
+ <div class="overlay-list">
+  <div><span>Meta da live</span><b>ATIVO</b></div><div><span>Contadores</span><b>ATIVO</b></div><div><span>Sorteio</span><b>PRONTO</b></div>
+ </div>
+</section>
+
+<section class="card youtube">
+ <span class="eyebrow">YOUTUBE</span><h2>Conectar sua live</h2>
+ <p>A próxima etapa liga este painel à sua transmissão para atualizar espectadores, likes, inscritos e mensagens automaticamente.</p>
+ <button class="primary" disabled>▶ CONECTAR YOUTUBE — PRÓXIMA ETAPA</button>
+</section>
+</main>
+<script src="app.js"></script>
+</body></html>
