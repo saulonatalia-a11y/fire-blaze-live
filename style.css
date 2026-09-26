@@ -6,3 +6,25 @@
 .draw-countdown,.winner-reveal{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}.draw-countdown small{font-weight:900;letter-spacing:3px;color:#d4b8ef}.draw-countdown span{margin-top:12px;color:#927da7}.draw-countdown strong{font-size:150px;line-height:1;margin:24px 0 5px;text-shadow:0 0 20px #a64cff,0 0 70px #7d20ff;animation:countPulse 1s ease-in-out infinite}.draw-countdown em{font-style:normal;color:#a48db8;text-transform:uppercase;letter-spacing:4px}.winner-reveal.hidden,.draw-countdown.hidden{display:none}.winner-reveal{overflow:hidden}.winner-reveal small{z-index:2;color:#e2c9ff;font-weight:900;letter-spacing:4px}.winner-reveal strong{z-index:2;font-size:70px;margin:25px;color:#fff;text-shadow:0 0 15px #fff,0 0 35px #b94cff,0 0 80px #7625ff;animation:winnerPop .8s cubic-bezier(.2,1.6,.4,1)}.winner-reveal span,.winner-reveal button{z-index:2}.confetti{position:absolute;inset:0;pointer-events:none}.confetti i{position:absolute;top:-10%;width:10px;height:20px;border-radius:3px;animation:confettiFall 3s linear forwards}.confetti i:nth-child(4n+1){background:#b85cff}.confetti i:nth-child(4n+2){background:#fff}.confetti i:nth-child(4n+3){background:#ffcf4d}.confetti i:nth-child(4n){background:#6c35ff}@keyframes countPulse{0%,100%{transform:scale(.9);opacity:.8}50%{transform:scale(1.08);opacity:1}}@keyframes winnerPop{0%{transform:scale(.2) rotate(-8deg);opacity:0}70%{transform:scale(1.12) rotate(2deg)}100%{transform:scale(1);opacity:1}}@keyframes confettiFall{to{transform:translateY(115vh) rotate(720deg);opacity:.8}}
 
 .overlay-test-btn{display:block;width:100%;padding:17px;text-align:center;text-decoration:none;border-radius:12px;font-weight:900;margin-top:16px}
+
+/* Chat compacto v9 */
+.live-chat-panel{padding:14px 18px 12px}
+.live-chat-head.compact-head{height:46px;border-bottom:0;justify-content:flex-end}
+.live-chat-head.compact-head .icon-btn{width:42px;height:42px}
+.live-chat-stats{gap:8px;margin:8px 0 10px}
+.live-chat-stats article{border-radius:12px;padding:9px 6px}
+.live-chat-stats span{font-size:8px}
+.live-chat-stats strong{font-size:20px;margin-top:3px}
+.live-chat-stream{height:calc(100vh - 190px);border-radius:14px;padding:10px}
+.live-chat-controls{grid-template-columns:130px 1fr;gap:8px;margin-top:8px}
+.live-participants{border-radius:10px;padding:7px 9px}
+.live-participants span{font-size:7px;line-height:1.15}
+.live-participants strong{font-size:18px}
+.live-draw-btn{font-size:12px;padding:10px}
+.live-chat-footer{padding:5px 3px;font-size:9px}
+@media(max-width:650px){
+ .live-chat-panel{padding:10px 12px 8px}
+ .live-chat-stats{grid-template-columns:repeat(3,1fr)}
+ .live-chat-stream{height:calc(100vh - 174px)}
+ .live-chat-controls{grid-template-columns:120px 1fr}
+}
