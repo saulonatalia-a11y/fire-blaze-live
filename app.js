@@ -48,6 +48,7 @@ function startDraw() {
   }
   if (drawTimer) clearInterval(drawTimer);
   const winner = participants[Math.floor(Math.random() * participants.length)];
+  localStorage.setItem('fireBlazeDraw', JSON.stringify({ winner, at: Date.now() }));
   $('#liveWinner').classList.remove('hidden');
   $('#drawCountdown').classList.remove('hidden');
   $('#winnerReveal').classList.add('hidden');
