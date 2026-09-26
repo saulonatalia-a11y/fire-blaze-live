@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fire Blaze Mult — Overlay</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:Arial,Helvetica,sans-serif}
+body{display:flex;align-items:flex-end;justify-content:center;padding:0 24px 58px}
+.ad{width:min(1180px,94vw);height:190px;position:relative;display:flex;align-items:center;gap:22px;padding:18px 34px 18px 22px;border:4px solid #ffd83d;border-radius:30px;background:linear-gradient(115deg,rgba(10,17,39,.97),rgba(19,47,91,.96) 58%,rgba(7,15,33,.97));box-shadow:0 0 0 4px rgba(28,96,184,.65),0 18px 55px rgba(0,0,0,.55),0 0 32px rgba(255,216,61,.35);color:white;transform:translateY(280px) scale(.9);opacity:0;animation:cycle 12s infinite cubic-bezier(.2,.8,.2,1)}
+.ad:before{content:"";position:absolute;inset:0;border-radius:26px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);transform:translateX(-120%);animation:shine 2.8s infinite 1.2s;pointer-events:none}
+.ball{flex:0 0 142px;height:142px;border-radius:50%;position:relative;background:linear-gradient(#ef3340 0 46%,#111 46% 54%,#f5f7fb 54%);border:6px solid #111;box-shadow:0 0 0 5px #fff,0 0 28px #57a6ff;animation:float 1.8s ease-in-out infinite}
+.ball:after{content:"";position:absolute;width:42px;height:42px;border:9px solid #111;background:#fff;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:inset 0 0 0 5px #dce6ef}
+.copy{min-width:0;flex:1}.brand{font-weight:1000;font-size:20px;letter-spacing:4px;color:#66b5ff;text-shadow:0 2px 0 #0b2855}.headline{margin:3px 0 5px;font-weight:1000;font-size:44px;line-height:.98;letter-spacing:-1px;color:#ffd83d;text-shadow:0 4px 0 #254f9b,0 7px 12px #000}.sub{font-weight:800;font-size:20px;color:#fff}.sub b{color:#79e6ff}
+.cta{flex:0 0 290px;text-align:center;background:linear-gradient(180deg,#ffdf43,#ffb300);border:4px solid #fff;border-radius:20px;padding:14px 18px;color:#101a36;box-shadow:0 6px 0 #b66a00,0 0 25px rgba(255,216,61,.45);animation:pulse 1.15s ease-in-out infinite}.cta strong{display:block;font-size:29px;font-weight:1000}.cta span{display:block;margin-top:3px;font-size:16px;font-weight:900;letter-spacing:1px}.spark{position:absolute;width:9px;height:9px;border-radius:50%;background:#ffd83d;box-shadow:0 0 12px #fff;animation:spark 1.6s infinite}.s1{left:18%;top:12%}.s2{left:53%;top:18%;animation-delay:.5s}.s3{right:27%;bottom:12%;animation-delay:1s}
+@keyframes cycle{0%,4%{transform:translateY(280px) scale(.9);opacity:0}10%,82%{transform:translateY(0) scale(1);opacity:1}89%,100%{transform:translateY(280px) scale(.94);opacity:0}}
+@keyframes float{50%{transform:translateY(-8px) rotate(5deg)}}@keyframes pulse{50%{transform:scale(1.045);filter:brightness(1.1)}}@keyframes shine{0%,35%{transform:translateX(-120%)}70%,100%{transform:translateX(120%)}}@keyframes spark{0%,100%{transform:scale(.3);opacity:.2}50%{transform:scale(1.8);opacity:1}}
+@media(max-width:800px){.ad{height:150px;padding:14px}.ball{flex-basis:105px;height:105px}.headline{font-size:29px}.sub{font-size:15px}.cta{flex-basis:220px}.cta strong{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="ad">
+ <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
+ <div class="ball" aria-hidden="true"></div>
+ <div class="copy">
+   <div class="brand">FIRE BLAZE MULT</div>
+   <div class="headline">JOGUE COM VÁRIAS CONTAS!</div>
+   <div class="sub">⚡ Conheça nosso MULT para <b>Poke Idle World</b></div>
+ </div>
+ <div class="cta"><strong>🎁 TESTE GRÁTIS</strong><span>👇 LINK FIXADO NO CHAT</span></div>
+</div>
+</body>
+</html>
