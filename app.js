@@ -16,6 +16,7 @@ $('#demo').onclick=()=>{
  if(!participants.includes(name)) participants.push(name);
  $('#chat').innerHTML=participants.map(n=>'<div class="msg"><b>'+n+'</b>: '+$('#keyword').value+'</div>').join('');
  $('#count').textContent=participants.length+' participante'+(participants.length===1?'':'s');
+ $('#liveParticipantCount').textContent=participants.length;
 };
 $('#draw').onclick=()=>{
  if(!participants.length){alert('Ainda não há participantes. Use SIMULAR PARTICIPANTE para testar.');return}
@@ -39,3 +40,14 @@ $('#demo').onclick=()=>{
  $('#chatMessageCount').textContent=participants.length+' mensagens';
  syncLiveStats();
 };
+
+function showLiveWinner(){
+ if(!participants.length){alert('Ainda não há participantes no sorteio.');return}
+ const w=participants[Math.floor(Math.random()*participants.length)];
+ $('#liveWinner strong').textContent=w;
+ $('#liveWinner').classList.remove('hidden');
+ $('#winner strong').textContent=w;
+ $('#winner').classList.remove('hidden');
+}
+$('#liveDraw').onclick=showLiveWinner;
+$('#closeWinner').onclick=()=>$('#liveWinner').classList.add('hidden');
