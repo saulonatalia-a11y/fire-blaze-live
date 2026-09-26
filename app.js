@@ -23,3 +23,19 @@ $('#draw').onclick=()=>{
  $('#winner strong').textContent=w; $('#winner').classList.remove('hidden');
 };
 updateGoal();
+const livePanel=$('#liveChatPanel');
+$('#openLiveChat').onclick=()=>{livePanel.classList.remove('hidden');syncLiveStats()};
+$('#closeLiveChat').onclick=()=>livePanel.classList.add('hidden');
+function syncLiveStats(){
+ $('#chatSubs').textContent=$('#subs').textContent;
+ $('#chatLikes').textContent=$('#likes').textContent;
+ $('#chatViewers').textContent=$('#viewers').textContent;
+}
+const oldDemo=$('#demo').onclick;
+$('#demo').onclick=()=>{
+ oldDemo();
+ const last=participants[participants.length-1];
+ $('#liveChatStream').innerHTML=participants.map(n=>'<div class="live-msg entry"><b>'+n+'</b><span>'+$('#keyword').value+'</span></div>').join('');
+ $('#chatMessageCount').textContent=participants.length+' mensagens';
+ syncLiveStats();
+};
