@@ -41,13 +41,30 @@ $('#demo').onclick=()=>{
  syncLiveStats();
 };
 
+let drawTimer=null;
+function makeConfetti(){
+ const box=$('#confetti'); box.innerHTML='';
+ for(let i=0;i<70;i++){const p=document.createElement('i');p.style.left=(Math.random()*100)+'%';p.style.animationDelay=(Math.random()*1.2)+'s';p.style.animationDuration=(2+Math.random()*2)+'s';box.appendChild(p)}
+}
 function showLiveWinner(){
  if(!participants.length){alert('Ainda não há participantes no sorteio.');return}
+ if(drawTimer) clearInterval(drawTimer);
  const w=participants[Math.floor(Math.random()*participants.length)];
- $('#liveWinner strong').textContent=w;
  $('#liveWinner').classList.remove('hidden');
- $('#winner strong').textContent=w;
- $('#winner').classList.remove('hidden');
+ $('#drawCountdown').classList.remove('hidden');
+ $('#winnerReveal').classList.add('hidden');
+ let n=10; $('#countdownNumber').textContent=n;
+ drawTimer=setInterval(()=>{
+  n--; $('#countdownNumber').textContent=Math.max(0,n);
+  if(n<=0){
+   clearInterval(drawTimer); drawTimer=null;
+   $('#drawCountdown').classList.add('hidden');
+   $('#winnerName').textContent=w;
+   $('#winnerReveal').classList.remove('hidden');
+   $('#winner strong').textContent=w; $('#winner').classList.remove('hidden');
+   makeConfetti();
+  }
+ },1000);
 }
 $('#liveDraw').onclick=showLiveWinner;
-$('#closeWinner').onclick=()=>$('#liveWinner').classList.add('hidden');
+$('#closeWinner').onclick=()=>{$('#liveWinner').classList.add('hidden');$('#confetti').innerHTML=''};
