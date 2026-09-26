@@ -3,13 +3,26 @@
 <title>Fire Blaze - Overlay Sorteio</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:Segoe UI,Arial,sans-serif;color:#fff}
-.stage{position:fixed;inset:0;display:none;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at center,rgba(111,44,255,.30),transparent 48%)}
-.stage.active{display:flex}.box{position:relative;min-width:min(820px,90vw);padding:55px 70px;border:2px solid rgba(187,126,255,.65);border-radius:30px;background:linear-gradient(145deg,rgba(25,10,45,.93),rgba(9,4,18,.92));box-shadow:0 0 50px rgba(137,56,255,.55),inset 0 0 45px rgba(147,72,255,.12);overflow:hidden}
-.kicker{font-size:20px;font-weight:900;letter-spacing:5px;color:#d6b8ff}.sub{color:#ae96c7;margin-top:12px;font-size:18px}.num{font-size:190px;line-height:1;margin:25px 0 5px;font-weight:900;text-shadow:0 0 20px #fff,0 0 55px #a343ff,0 0 100px #7025ff;animation:pulse 1s ease-in-out infinite}.sec{letter-spacing:6px;color:#aa94bd}.winner{display:none}.winner.show{display:block;animation:pop .8s cubic-bezier(.2,1.6,.4,1)}.winner h1{font-size:74px;margin:25px 0;text-shadow:0 0 15px #fff,0 0 40px #c15cff,0 0 100px #7025ff}.winner .congrats{font-size:26px;font-weight:900;color:#d7baff}.confetti i{position:fixed;top:-30px;width:12px;height:24px;border-radius:3px;animation:fall 3.5s linear forwards}.confetti i:nth-child(4n+1){background:#b85cff}.confetti i:nth-child(4n+2){background:#fff}.confetti i:nth-child(4n+3){background:#ffd65a}.confetti i:nth-child(4n){background:#6f35ff}.waiting{font-size:20px;color:#c7addf;letter-spacing:2px}
-@keyframes pulse{50%{transform:scale(1.12)}}@keyframes pop{0%{transform:scale(.15);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}@keyframes fall{to{transform:translateY(110vh) rotate(900deg);opacity:.7}}
+.stage{position:fixed;inset:0;display:none;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at center,rgba(58,132,255,.18),transparent 52%)}
+.stage.active{display:flex}
+.box{position:relative;min-width:min(860px,92vw);padding:58px 72px;border:4px solid #f5f5f5;border-radius:34px;background:linear-gradient(160deg,rgba(15,25,48,.97),rgba(7,12,24,.97));box-shadow:0 0 0 7px #d62828,0 0 0 11px #151515,0 0 55px rgba(48,135,255,.7);overflow:hidden}
+.box:before{content:'';position:absolute;left:-8%;right:-8%;top:50%;height:12px;background:#111;transform:translateY(-50%);opacity:.55}
+.ball{position:absolute;width:96px;height:96px;border-radius:50%;right:28px;top:24px;background:linear-gradient(#e53935 0 45%,#111 45% 55%,#f4f4f4 55%);border:5px solid #111;box-shadow:0 0 28px rgba(255,255,255,.35);opacity:.9}
+.ball:after{content:'';position:absolute;width:28px;height:28px;border-radius:50%;background:#fff;border:6px solid #111;left:50%;top:50%;transform:translate(-50%,-50%)}
+.kicker{position:relative;z-index:2;font-size:21px;font-weight:1000;letter-spacing:4px;color:#ffd54a;text-shadow:0 3px 0 #2452a4,0 0 18px #3688ff}
+.sub{position:relative;z-index:2;color:#dbe9ff;margin-top:12px;font-size:18px}
+.num{position:relative;z-index:2;font-size:190px;line-height:1;margin:25px 0 5px;font-weight:1000;color:#fff;text-shadow:0 5px 0 #2858aa,0 0 24px #fff,0 0 65px #2c83ff;animation:pulse 1s ease-in-out infinite}
+.sec{position:relative;z-index:2;letter-spacing:6px;color:#9ec7ff;font-weight:900}
+.winner{display:none;position:relative;z-index:2}.winner.show{display:block;animation:pop .8s cubic-bezier(.2,1.6,.4,1)}
+.winner h1{font-size:76px;margin:25px 0;color:#fff;text-shadow:0 5px 0 #2452a4,0 0 18px #fff,0 0 55px #3285ff}
+.winner .congrats{font-size:28px;font-weight:1000;color:#ffd54a;text-shadow:0 3px 0 #2452a4}
+.flash{position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent,#ffffff22,transparent,#4da0ff33,transparent);animation:spin 7s linear infinite}
+.confetti i{position:fixed;top:-30px;width:12px;height:24px;border-radius:3px;animation:fall 3.5s linear forwards}.confetti i:nth-child(4n+1){background:#ef3340}.confetti i:nth-child(4n+2){background:#fff}.confetti i:nth-child(4n+3){background:#ffd54a}.confetti i:nth-child(4n){background:#3285ff}
+.waiting{font-size:14px;color:#fff;background:#111b;border:1px solid #ffffff33;padding:8px 12px;border-radius:20px;letter-spacing:1px}
+@keyframes pulse{50%{transform:scale(1.12)}}@keyframes pop{0%{transform:scale(.15);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}@keyframes fall{to{transform:translateY(110vh) rotate(900deg);opacity:.7}}@keyframes spin{to{transform:rotate(360deg)}}
 </style></head><body>
 <div class="waiting" id="waiting" style="position:fixed;right:20px;bottom:20px">OVERLAY PRONTO • AGUARDANDO SORTEIO</div>
-<div class="stage" id="stage"><div class="box">
+<div class="stage" id="stage"><div class="box"><div class="flash"></div><div class="ball"></div>
  <div id="count"><div class="kicker">🎁 SORTEIO EM ANDAMENTO</div><div class="sub">PREPARANDO O RESULTADO...</div><div class="num" id="n">10</div><div class="sec">SEGUNDOS</div></div>
  <div class="winner" id="winner"><div class="kicker">🏆 GANHADOR DO SORTEIO</div><h1 id="winnerName"></h1><div class="congrats">PARABÉNS! 🎉</div></div>
 </div></div><div class="confetti" id="fx"></div>
