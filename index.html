@@ -48,10 +48,19 @@
    <button id="liveDraw" class="primary live-draw-btn">🎁 SORTEAR AGORA</button>
  </div>
  <div id="liveWinner" class="live-winner hidden">
-   <small>🏆 GANHADOR DO SORTEIO</small>
-   <strong></strong>
-   <span>PARABÉNS! 🎉</span>
-   <button id="closeWinner">FECHAR</button>
+   <div id="drawCountdown" class="draw-countdown">
+    <small>🎁 SORTEIO EM ANDAMENTO</small>
+    <span>PREPARANDO O RESULTADO...</span>
+    <strong id="countdownNumber">10</strong>
+    <em>segundos</em>
+   </div>
+   <div id="winnerReveal" class="winner-reveal hidden">
+    <div class="confetti" id="confetti"></div>
+    <small>🏆 GANHADOR DO SORTEIO</small>
+    <strong id="winnerName"></strong>
+    <span>PARABÉNS! 🎉</span>
+    <button id="closeWinner">FECHAR</button>
+   </div>
  </div>
  <div class="live-chat-footer"><span><i></i> Chat conectado</span><b id="chatMessageCount">0 mensagens</b></div>
 </section>
